@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  firstname: MyString
+  lastname: MyString
+  sex: MyString
+  published: 1
+  finished: 2019-10-16
+  rating: 1
+  owned: false
+  tags: MyText
+
+two:
+  title: MyString
+  firstname: MyString
+  lastname: MyString
+  sex: MyString
+  published: 1
+  finished: 2019-10-16
+  rating: 1
+  owned: false
+  tags: MyText

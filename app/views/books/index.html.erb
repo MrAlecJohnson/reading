@@ -1,0 +1,23 @@
+<h1>What I've read</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Author first name</th>
+        <th>Author last name</th>
+        <th>Year published</th>
+        <th>Date finished</th>
+        <th>Owned</th>
+    </tr>
+
+    <% @books.each do |r| %>
+        <tr>
+            <td><%= r.title %></td>
+            <td><%= r.firstname %></td>
+            <td><%= r.lastname %></td>
+            <td><%= r.published %></td>
+            <td><%= r.finished %></td>
+            <td><%= r.owned %></td>
+        </tr>
+    <% end %>
+</table>

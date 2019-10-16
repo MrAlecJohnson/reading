@@ -1,0 +1,43 @@
+<h1>Start reading a book</h1>
+
+<%= form_with model: @book, local: true do |form| %>
+
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </p>
+
+    <p>
+        <%= form.label :firstname, "Author's first name" %><br>
+        <%= form.text_field :firstname %>
+    </p>
+
+    <p>
+        <%= form.label :lastname, "Author's last name" %><br>
+        <%= form.text_field :lastname %>
+    </p>
+
+    <p>
+        <%= form.label :sex, "Author's sex" %><br>
+        <%= form.text_field :sex %>
+    </p>
+
+    <p>
+        <%= form.label :published, "Year published" %><br>
+        <%= form.text_field :published %>
+    </p>
+
+    <p>
+        <%= form.label :started, "Date finished" %><br>
+        <%= form.date_field :finished %>
+    </p>
+
+    <p>
+        Do I own it? <%= form.check_box :owned %><br>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+
+<% end %>
