@@ -12,19 +12,38 @@ class BooksController < ApplicationController
         #@book.finished ||= Date.today
     end
 
+    def edit
+        @book = Book.find(params[:id])
+      end      
+
     def create
         @book = Book.new(book_params)
-        @book.save!
-        redirect_to @book
-        
-        #@read = Read.new(read_params)
-
-        #if @read.save
-        #    redirect_to @read
-        #else
-        #    render 'new'
-        #end
+       
+        if @book.save
+            redirect_to @book
+        else
+            render 'new'
+        end
     end
+
+    def update
+        @book = Book.find(params[:id])
+
+        if @book.update(book_params)
+            redirect_to @book
+        else
+            render 'edit'
+        end
+    end
+
+    def destroy
+        @book = Book.find(params[:id])
+        @book.destroy
+
+        redirect_to books_path
+
+    end
+
 
     private
     def book_params
@@ -32,6 +51,7 @@ class BooksController < ApplicationController
             :title, 
             :firstname, 
             :lastname, 
+            :sex,
             :published, 
             :finished, 
             :owned)

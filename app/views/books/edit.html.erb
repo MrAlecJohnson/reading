@@ -1,0 +1,58 @@
+<h1>Book added</h1>
+ 
+<%= form_with(model: @book, local: true) do |form| %>
+ 
+  <% if @book.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@book.errors.count, "error") %> stopped me saving this book:
+      </h2>
+      <ul>
+        <% @book.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </p>
+
+    <p>
+        <%= form.label :firstname, "Author's first name" %><br>
+        <%= form.text_field :firstname %>
+    </p>
+
+    <p>
+        <%= form.label :lastname, "Author's last name" %><br>
+        <%= form.text_field :lastname %>
+    </p>
+
+    <p>
+        <%= form.label :sex, "Author's sex" %><br>
+        <%= form.text_field :sex %>
+    </p>
+
+    <p>
+        <%= form.label :published, "Year published" %><br>
+        <%= form.text_field :published %>
+    </p>
+
+    <p>
+        <%= form.label :started, "Date finished" %><br>
+        <%= form.date_field :finished %>
+    </p>
+
+    <p>
+        Do I own it? <%= form.check_box :owned %><br>
+    </p>
+
+    <p>
+        <%= form.submit %>
+    </p>
+ 
+<% end %>
+ 
+<%= link_to 'Back', books_path %><p>

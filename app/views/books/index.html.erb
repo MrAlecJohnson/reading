@@ -3,21 +3,30 @@
 <table>
     <tr>
         <th>Title</th>
-        <th>Author first name</th>
-        <th>Author last name</th>
+        <th>Author's first name</th>
+        <th>Author's last name</th>
+        <th>Author's sex</th>
         <th>Year published</th>
         <th>Date finished</th>
         <th>Owned</th>
+        <th colspan="3"></th>
     </tr>
 
-    <% @books.each do |r| %>
+    <% @books.each do |b| %>
         <tr>
-            <td><%= r.title %></td>
-            <td><%= r.firstname %></td>
-            <td><%= r.lastname %></td>
-            <td><%= r.published %></td>
-            <td><%= r.finished %></td>
-            <td><%= r.owned %></td>
+            <td><%= b.title %></td>
+            <td><%= b.firstname %></td>
+            <td><%= b.lastname %></td>
+            <td><%= b.sex %></td>
+            <td><%= b.published %></td>
+            <td><%= b.finished %></td>
+            <td><%= b.owned %></td>
+            <td><%= link_to 'Show', book_path(b) %></td>
+            <td><%= link_to 'Edit', edit_book_path(b) %></td>
+            <td><%= link_to 'Destroy', book_path(b),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+
         </tr>
     <% end %>
 </table>
