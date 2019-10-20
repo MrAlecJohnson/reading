@@ -16,6 +16,11 @@
 </p>
 
 <p>
+    <strong>Rating:</strong>
+    <%= @book.rating %>
+</p>
+
+<p>
     <strong>Author's sex:</strong>
     <%= @book.sex %>
 </p>
@@ -27,7 +32,12 @@
 
 <p>
     <strong>Date finished:</strong>
-    <%= @book.finished %>
+    <%= @book.finished.strftime("%-d %B %Y") %>
+</p>
+
+<p>
+    <strong>Series:</strong>
+    <%= @book.series %>
 </p>
 
 <p>

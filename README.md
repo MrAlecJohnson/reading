@@ -1,5 +1,18 @@
 # README
+## PLAN
 
+* Insert basic navigation links
+* Create dashboard
+* Split off authors table for faster author counts
+* Add tags
+* Add comments
+* Import existing data
+* Typeaheads on authors
+* Host and deploy
+* Make it look nice
+
+
+# ORIGINAL RAILS README
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

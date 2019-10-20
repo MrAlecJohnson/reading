@@ -31,6 +31,11 @@
     </p>
 
     <p>
+        <%= form.label :rating %><br>
+        <%= form.text_field :rating %>
+    </p>
+
+    <p>
         <%= form.label :sex, "Author's sex" %><br>
         <%= form.text_field :sex %>
     </p>
@@ -44,6 +49,12 @@
         <%= form.label :started, "Date finished" %><br>
         <%= form.date_field :finished %>
     </p>
+
+    <p>
+        <%= form.label :series %><br>
+        <%= form.text_field :series %>
+    </p>
+
 
     <p>
         Do I own it? <%= form.check_box :owned %><br>

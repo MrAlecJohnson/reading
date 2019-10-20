@@ -51,9 +51,11 @@ class BooksController < ApplicationController
             :title, 
             :firstname, 
             :lastname, 
+            :rating,
             :sex,
             :published, 
             :finished, 
+            :series,
             :owned)
     end
 end

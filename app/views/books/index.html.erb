@@ -5,11 +5,13 @@
         <th>Title</th>
         <th>Author's first name</th>
         <th>Author's last name</th>
+        <th>Rating</th>
         <th>Author's sex</th>
         <th>Year published</th>
         <th>Date finished</th>
+        <th>Series</th>
         <th>Owned</th>
-        <th colspan="3"></th>
+        <th colspan="2"></th>
     </tr>
 
     <% @books.each do |b| %>
@@ -17,11 +19,12 @@
             <td><%= b.title %></td>
             <td><%= b.firstname %></td>
             <td><%= b.lastname %></td>
+            <td><%= b.rating %></td>
             <td><%= b.sex %></td>
             <td><%= b.published %></td>
-            <td><%= b.finished %></td>
+            <td><%= b.finished.strftime("%-d %B %Y") %></td>
+            <td><%= b.series %></td>
             <td><%= b.owned %></td>
-            <td><%= link_to 'Show', book_path(b) %></td>
             <td><%= link_to 'Edit', edit_book_path(b) %></td>
             <td><%= link_to 'Destroy', book_path(b),
                 method: :delete,
