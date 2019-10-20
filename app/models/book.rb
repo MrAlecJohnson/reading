@@ -1,3 +1,6 @@
+require 'csv'
+require 'activerecord-import/base'
+
 class Book < ApplicationRecord
     validates :title, presence: true
     validates :firstname, presence: true
@@ -11,5 +14,15 @@ class Book < ApplicationRecord
     validates :rating, inclusion: {
         in: 1..5,
         message: '- this must be from 1 to 5'}
-                
+
+    def self.book_import(file)
+        new_books = []
+        CSV.foreach(file.path, headers: true) do |row|
+            #UNFINISHED
+            data = row[0..1] + row[2..7]
+            new_books << Book.new(row.to_h)
+        end
+        Book.import new_books, recursive: true
+    end
+
 end

@@ -11,6 +11,7 @@
 * Host and deploy
 * Better authentication
 * Make it look nice
+* Add wishlist
 
 
 # ORIGINAL RAILS README
