@@ -1,4 +1,7 @@
-<h1>Start reading a book</h1>
+<h1>Enter a new book</h1>
+
+<%= link_to 'Back to dashboard', "/" %><p>
+<%= link_to 'Back to book list', books_path %><p>
 
 <%= form_with model: @book, local: true do |form| %>
 
@@ -64,3 +67,5 @@
     </p>
 
 <% end %>
+
+

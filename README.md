@@ -1,7 +1,6 @@
 # README
 ## PLAN
 
-* Insert basic navigation links
 * Create dashboard
 * Split off authors table for faster author counts
 * Add tags
