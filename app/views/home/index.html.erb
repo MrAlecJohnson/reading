@@ -1,4 +1,14 @@
 <h1>Hello!</h1>
-<p>This is the homepage for my reading app</p>
+<p>This is the dashboard for my reading app</p>
+
 <%= link_to "Add new book", new_book_path %><p>
 <%= link_to "List all the books I've read", books_path %><p>
+
+<p><strong><%= @this_month_count %></strong> books finished this month</p>
+<p><strong><%= @this_year_count %></strong> books finished this year</p>
+<p><strong><%= @women_this_year %>%</strong> of books read this year were by women</p>
+<p><strong><%= @all_time_count %></strong> books read since I started recording in 2011</p>
+
+<p>Chart of books read per year</p>
+<p>Books by year of publication</p>
+<p>Most-read authors</p>

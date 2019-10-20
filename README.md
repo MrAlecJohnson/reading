@@ -1,11 +1,12 @@
 # README
 ## PLAN
 
-* Create dashboard
-* Split off authors table for faster author counts
+* Create basic dashboard
+* Import existing data
+* Split off authors table for author counts and consistent data
+* Add fancy bits to dashboard
 * Add tags
 * Add comments
-* Import existing data
 * Typeaheads on authors
 * Host and deploy
 * Make it look nice
