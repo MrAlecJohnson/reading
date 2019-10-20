@@ -1,14 +1,15 @@
 # README
 ## PLAN
 
-* Create basic dashboard
 * Import existing data
 * Split off authors table for author counts and consistent data
 * Add fancy bits to dashboard
 * Add tags
 * Add comments
 * Typeaheads on authors
+* Proper database (Postgres needed for Heroku)
 * Host and deploy
+* Better authentication
 * Make it look nice
 
 
