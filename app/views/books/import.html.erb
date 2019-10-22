@@ -1,0 +1,37 @@
+<% flash[:notice] %>
+<div>
+    <h2>Import data</h2>
+    <% form_tag import_books_path, multipart: true do %>
+        <% file_field_tag :file %>
+        <% submit_tag "Import from file" %>
+    <% end %>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Lastname</th>
+            <th>Firstname</th>
+            <th>Title</th>
+            <th>Sex</th>
+            <th>Series</th>
+            <th>Rating</th>
+            <th>Year</th>
+            <th>Finished</th>
+            <th>Owned</th>
+    </thead>
+    <tbody>
+        <% @books.each do |book| %>
+        <tr>
+            <td><% book.lastname %></td>
+            <td><% book.firstname %></td>
+            <td><% book.title %></td>
+            <td><% book.sex %></td>
+            <td><% book.series %></td>
+            <td><% book.rating %></td>
+            <td><% book.published %></td>
+            <td><% book.finished %></td>
+            <td><% book.owned %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

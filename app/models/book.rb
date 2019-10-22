@@ -1,5 +1,6 @@
 require 'csv'
 require 'activerecord-import/base'
+require 'activerecord-import/active_record/adapters/sqlite3_adapter'
 
 class Book < ApplicationRecord
     validates :title, presence: true
@@ -15,14 +16,17 @@ class Book < ApplicationRecord
         in: 1..5,
         message: '- this must be from 1 to 5'}
 
-    def self.book_import(file)
+    def self.my_import(file)
         new_books = []
-        CSV.foreach(file.path, headers: true) do |row|
-            #UNFINISHED
-            data = row[0..1] + row[2..7]
+        converter = lambda { |header| header.downcase }
+        CSV.foreach(file.path, headers: true, header_converters: converter) do |row|
             new_books << Book.new(row.to_h)
         end
         Book.import new_books, recursive: true
     end
+
+    #def self.empty
+    #    Books.delete_all
+    #end
 
 end

@@ -15,12 +15,11 @@ class BooksController < ApplicationController
 
     def new
         @book = Book.new
-        #@book.finished ||= Date.today
     end
 
     def edit
         @book = Book.find(params[:id])
-      end      
+    end      
 
     def create
         @book = Book.new(book_params)
@@ -47,8 +46,17 @@ class BooksController < ApplicationController
         @book.destroy
 
         redirect_to books_path
-
     end
+
+    def import
+        Book.my_import(params[:file])
+        redirect_to root_url, notice: "Added new books"
+    end
+
+#    def empty
+#        Books.empty
+#        redirect_to books_path, notice: "Removed all books"
+#    end
 
 
     private
