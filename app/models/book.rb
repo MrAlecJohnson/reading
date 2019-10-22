@@ -25,8 +25,4 @@ class Book < ApplicationRecord
         Book.import new_books, recursive: true
     end
 
-    #def self.empty
-    #    Books.delete_all
-    #end
-
 end

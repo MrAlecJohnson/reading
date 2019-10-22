@@ -13,6 +13,14 @@
     <% end %>
 </div>
 
+<div>
+    <h2>Empty the database</h2>
+    <%= form_tag empty_path, multipart: true do %>
+        <%= submit_tag "Delete all books" %>
+    <% end %>
+</div>
+
+
 <table>
     <tr>
         <th>Title</th>

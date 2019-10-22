@@ -50,13 +50,13 @@ class BooksController < ApplicationController
 
     def import
         Book.my_import(params[:file])
-        redirect_to root_url, notice: "Added new books"
+        redirect_to books_path, notice: "Added new books"
     end
 
-#    def empty
-#        Books.empty
-#        redirect_to books_path, notice: "Removed all books"
-#    end
+    def empty
+        Books.delete_all    
+        redirect_to books_path, notice: "Removed all books"
+    end
 
 
     private
