@@ -9,6 +9,8 @@
 <p><strong><%= @women_this_year %>%</strong> of books read this year were by women</p>
 <p><strong><%= @all_time_count %></strong> books read since I started recording in 2011</p>
 
-<p>Chart of books read per year</p>
+<h2>Books read per year</h2>
+<%= column_chart Book.where(finished: "2011-01-01"..).group_by_year(:finished, format: "%Y").count %>
+
 <p>Books by year of publication</p>
 <p>Most-read authors</p>

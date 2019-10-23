@@ -25,6 +25,9 @@ gem 'jbuilder', '~> 2.7'
 # MY BITS
 # Use Activemodel import for CSV 
 gem 'activerecord-import'
+# Use chartkick for pretty graphs
+gem 'chartkick'
+gem 'groupdate'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

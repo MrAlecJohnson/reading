@@ -1,7 +1,6 @@
 # README
 ## PLAN
 
-* Move import to the 'new' page
 * Split off authors table for author counts and consistent data
 * Add fancy bits to dashboard
 * Add tags
