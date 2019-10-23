@@ -1,8 +1,13 @@
-<h1>Enter a new book</h1>
+<h1>Enter new books</h1>
 
 <%= link_to 'Back to dashboard', "/" %><p>
 <%= link_to 'Back to book list', books_path %><p>
 
+<% if flash[:notice] %>
+    <div class = "notice"><%= flash[:notice] %></div>
+<% end %>
+<br>
+<h2>Add a new book</h2>
 <%= form_with model: @book, local: true do |form| %>
 
     <% if @book.errors.any? %>
@@ -68,4 +73,11 @@
 
 <% end %>
 
+<div>
+    <h2>Import CSV of books</h2>
+    <%= form_tag import_books_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import from CSV" %>
+    <% end %>
+</div>
 

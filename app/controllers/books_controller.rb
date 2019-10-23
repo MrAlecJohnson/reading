@@ -49,8 +49,16 @@ class BooksController < ApplicationController
     end
 
     def import
-        Book.my_import(params[:file])
-        redirect_to books_path, notice: "Added new books"
+        if params[:file]
+            before = Book.count
+            Book.my_import(params[:file])
+            added = Book.count - before
+            flash[:notice] = "Added #{added} new books"
+            redirect_to books_path 
+        else
+            flash[:notice] = "No file selected"
+            redirect_to new_book_path
+        end
     end
 
     private

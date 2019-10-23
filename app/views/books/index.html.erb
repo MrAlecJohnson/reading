@@ -1,17 +1,11 @@
 <h1>What I've read</h1>
 
-<% flash[:notice] %>
+<% if flash[:notice] %>
+    <div class = "notice"><%= flash[:notice] %></div>
+<% end %>
 
 <%= link_to 'Back to dashboard', "/" %><p>
 <%= link_to 'Add a new book', new_book_path %><p> 
-
-<div>
-    <h2>Import data</h2>
-    <%= form_tag import_books_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import from CSV" %>
-    <% end %>
-</div>
 
 <table>
     <tr>
