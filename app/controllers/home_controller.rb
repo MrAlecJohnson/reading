@@ -6,12 +6,12 @@ class HomeController < ApplicationController
         @this_year_count = @this_year.count
         
         if @this_year_count > 0
-            @women_this_year = (100*@this_year.where(:sex == "F").count/@this_year_count).round
+            @women_this_year = (100*@this_year.where(sex: "F").count/@this_year_count).round
         else
             @women_this_year = 0
         end
 
-        @all_time_count = Book.count
+        @all_time_count = Book.where.not(finished: nil).count
 
     end
 end

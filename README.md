@@ -1,7 +1,6 @@
 # README
 ## PLAN
 
-* Import existing data
 * Split off authors table for author counts and consistent data
 * Add fancy bits to dashboard
 * Add tags
