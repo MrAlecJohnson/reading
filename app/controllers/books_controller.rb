@@ -53,12 +53,6 @@ class BooksController < ApplicationController
         redirect_to books_path, notice: "Added new books"
     end
 
-    def empty
-        Books.delete_all    
-        redirect_to books_path, notice: "Removed all books"
-    end
-
-
     private
     def book_params
         params.require(:book).permit(
