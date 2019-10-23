@@ -12,6 +12,9 @@ class HomeController < ApplicationController
         end
 
         @all_time_count = Book.where.not(finished: nil).count
+        @chart1 = Book.where(finished: "2011-01-01"..).group_by_year(:finished, format: "%Y").count
 
     end
+
+    
 end

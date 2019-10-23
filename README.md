@@ -1,13 +1,14 @@
 # README
 ## PLAN
 
+* Sort and filter
 * Split off authors table for author counts and consistent data
-* Add fancy bits to dashboard
+* Proper database (Postgres needed for Heroku)
+* Host and deploy
+* more data: top authors and books by year published
 * Add tags
 * Add comments
 * Typeaheads on authors
-* Proper database (Postgres needed for Heroku)
-* Host and deploy
 * Better authentication
 * Make it look nice
 * Add wishlist
