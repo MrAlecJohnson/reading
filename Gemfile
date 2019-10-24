@@ -28,6 +28,9 @@ gem 'activerecord-import'
 # Use chartkick for pretty graphs
 gem 'chartkick'
 gem 'groupdate'
+# Use datatables for sortable, searchable table
+gem 'jquery-rails'
+gem 'bootstrap-sass'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

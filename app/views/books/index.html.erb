@@ -7,7 +7,11 @@
 <%= link_to 'Back to dashboard', "/" %><p>
 <%= link_to 'Add a new book', new_book_path %><p> 
 
-<table>
+<div class="container table-container">
+    <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    <table id="static-table" class="display">
+    <thead>
     <tr>
         <th>Title</th>
         <th>Author's first name</th>
@@ -20,7 +24,8 @@
         <th>Owned</th>
         <th colspan="2"></th>
     </tr>
-
+    </thead>
+    <tbody>
     <% @books.each do |b| %>
         <tr>
             <td><%= b.title %></td>
@@ -39,4 +44,8 @@
 
         </tr>
     <% end %>
-</table>
+    </tbody>
+    </table>
+</div>
+</div>
+</div>
