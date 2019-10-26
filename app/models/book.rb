@@ -6,7 +6,7 @@ class Book < ApplicationRecord
     validates :title, presence: true
     validates :firstname, presence: true
     validates :lastname, presence: true
-    validates :sex, inclusion: { 
+    validates :gender, inclusion: { 
         in: ['M', 'F', 'O'], 
         message: '- this must be M, F or O'}
     validates :published, length: {

@@ -6,8 +6,10 @@ class BooksController < ApplicationController
     http_basic_authenticate_with name: USER, password: PASS, except: [:index]
 
     def index
-        @books = Book.all
-    end
+        @books_grid = BooksGrid.new(params[:books_grid]) do |scope|
+            scope.page(params[:page])
+        end
+    end    
 
     def show
         @book = Book.find(params[:id])
@@ -68,10 +70,15 @@ class BooksController < ApplicationController
             :firstname, 
             :lastname, 
             :rating,
-            :sex,
+            :gender,
             :published, 
             :finished, 
             :series,
             :owned)
+    end
+
+    protected
+    def grid_params
+        params.fetch(:tables_grid, {}).permit!
     end
 end

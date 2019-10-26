@@ -1,7 +1,7 @@
 # README
 ## PLAN
 
-* Sort and filter - try datatables
+* Sort and filter
 * Split off authors table for author counts and consistent data
 * Proper database (Postgres needed for Heroku)
 * Host and deploy

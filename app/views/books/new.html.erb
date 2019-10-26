@@ -40,12 +40,12 @@
 
     <p>
         <%= form.label :rating %><br>
-        <%= form.text_field :rating %>
+        <%= form.number_field :rating, min: 1, max: 5, placeholder: 3 %>
     </p>
 
     <p>
-        <%= form.label :sex, "Author's sex" %><br>
-        <%= form.text_field :sex %>
+        <%= form.label :gender, "Author's gender" %><br>
+        <%= form.select :gender, [['Female','F'], ['Male','M'], ['Other','O']] %>        
     </p>
 
     <p>

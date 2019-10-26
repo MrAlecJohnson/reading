@@ -7,45 +7,8 @@
 <%= link_to 'Back to dashboard', "/" %><p>
 <%= link_to 'Add a new book', new_book_path %><p> 
 
-<div class="container table-container">
-    <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-    <table id="static-table" class="display">
-    <thead>
-    <tr>
-        <th>Title</th>
-        <th>Author's first name</th>
-        <th>Author's last name</th>
-        <th>Rating</th>
-        <th>Author's sex</th>
-        <th>Year published</th>
-        <th>Date finished</th>
-        <th>Series</th>
-        <th>Owned</th>
-        <th colspan="2"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <% @books.each do |b| %>
-        <tr>
-            <td><%= b.title %></td>
-            <td><%= b.firstname %></td>
-            <td><%= b.lastname %></td>
-            <td><%= b.rating %></td>
-            <td><%= b.sex %></td>
-            <td><%= b.published %></td>
-            <td><%= b.finished ? b.finished.strftime("%-d %B %Y") : nil %></td>
-            <td><%= b.series %></td>
-            <td><%= b.owned %></td>
-            <td><%= link_to 'Edit', edit_book_path(b) %></td>
-            <td><%= link_to 'Destroy', book_path(b),
-                method: :delete,
-                data: { confirm: 'Are you sure?' } %></td>
+<%= datagrid_form_for @books_grid, url: books_path %>
 
-        </tr>
-    <% end %>
-    </tbody>
-    </table>
-</div>
-</div>
-</div>
+<div class='total'>Total: <%= @books_grid.assets.total_count %></div>
+<%= datagrid_table(@books_grid) %>
+<%= paginate @books_grid.assets %>
