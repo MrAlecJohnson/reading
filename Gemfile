@@ -6,7 +6,9 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.4'
+#gem 'sqlite3', '~> 1.4'
+# CHANGING TO POSTGRES FOR HEROKU
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -28,6 +30,7 @@ gem 'activerecord-import'
 # Use chartkick for pretty graphs
 gem 'chartkick'
 gem 'groupdate'
+# Use datagrid for tables
 gem 'datagrid'
 
 # Use Active Storage variant
