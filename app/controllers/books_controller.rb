@@ -1,8 +1,7 @@
 class BooksController < ApplicationController
 
-    auth = IO.readlines("auth.env", chomp: true)
-    USER = auth[0]
-    PASS = auth[1]
+    USER = ENV['CONTROLLER_USER']
+    PASS = ENV['CONTROLLER_PASSWORD']
     http_basic_authenticate_with name: USER, password: PASS, except: [:index]
 
     def index
