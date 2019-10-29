@@ -1,18 +1,20 @@
 # README
 ## PLAN
 
-* Sort and filter
-* Split off authors table for author counts and consistent data
+* Split off authors table for author counts and consistent data. When I do this: 
+    def fullname
+        "#{firstname} #{lastname}"
+    end
+
 * Proper database (Postgres needed for Heroku)
 * Host and deploy
-* more data: top authors and books by year published
+* more dashboard data: top authors and books by year published
 * Add tags
 * Add comments
 * Typeaheads on authors
 * Better authentication
 * Make it look nice
 * Add wishlist
-
 
 # ORIGINAL RAILS README
 This README would normally document whatever steps are necessary to get the

@@ -7,7 +7,7 @@ class BooksController < ApplicationController
 
     def index
         @books_grid = BooksGrid.new(params[:books_grid]) do |scope|
-            scope.page(params[:page])
+            scope.page(params[:page]).per(100)
         end
     end    
 
