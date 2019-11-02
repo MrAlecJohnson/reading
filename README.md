@@ -6,8 +6,6 @@
         "#{firstname} #{lastname}"
     end
 
-* Proper database (Postgres needed for Heroku)
-* Host and deploy
 * more dashboard data: top authors and books by year published
 * Add tags
 * Add comments

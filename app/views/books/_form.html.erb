@@ -1,0 +1,64 @@
+<%= form_with model: @book, local: true do |form| %>
+
+    <% if @book.errors.any? %>
+        <div id="error_explanation">
+            <h3>
+                <%= pluralize(@book.errors.count, "error") %> stopped you saving this book:
+            </h3>
+            <ul>
+            <% @book.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <p>
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+    </p>
+
+    <p>
+        <%= form.label :firstname, "Author's first name" %><br>
+        <%= form.text_field :firstname %>
+    </p>
+
+    <p>
+        <%= form.label :lastname, "Author's last name" %><br>
+        <%= form.text_field :lastname %>
+    </p>
+
+    <p>
+        <%= form.label :rating %><br>
+        <%= form.number_field :rating, min: 1, max: 5, placeholder: 3 %>
+    </p>
+
+    <p>
+        <%= form.label :gender, "Author's gender" %><br>
+        <%= form.select :gender, [['Female','F'], ['Male','M'], ['Other','O']] %>        
+    </p>
+
+    <p>
+        <%= form.label :published, "Year published" %><br>
+        <%= form.text_field :published %>
+    </p>
+
+    <p>
+        <%= form.label :finished, "Date finished" %><br>
+        <%= form.date_field :finished, :value => Date.current %>
+    </p>
+
+    <p>
+        <%= form.label :series %><br>
+        <%= form.text_field :series %>
+    </p>
+
+    <p>
+        Do I own it? <%= form.check_box :owned %><br>
+    </p>
+
+    <p>
+        <%= form.submit "Add book" %>
+    </p>
+
+<% end %>
