@@ -1,18 +1,15 @@
 # README
 ## PLAN
 
-* Split off authors table for author counts and consistent data. When I do this: 
-    def fullname
-        "#{firstname} #{lastname}"
-    end
-
 * more dashboard data: top authors and books by year published
 * Add tags
 * Add comments
-* Typeaheads on authors
+* Typeaheads on authors?
+* Add wishlist
 * Better authentication
 * Make it look nice
-* Add wishlist
+* think about whether to move authors to their own table - right now I don't see the point (might make counts faster, but DB is small)
+
 
 # ORIGINAL RAILS README
 This README would normally document whatever steps are necessary to get the

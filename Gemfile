@@ -32,6 +32,7 @@ gem 'chartkick'
 gem 'groupdate'
 # Use datagrid for tables
 gem 'datagrid'
+gem 'pry'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

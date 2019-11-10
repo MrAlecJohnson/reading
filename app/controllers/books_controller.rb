@@ -8,6 +8,8 @@ class BooksController < ApplicationController
         @books_grid = BooksGrid.new(params[:books_grid]) do |scope|
             scope.page(params[:page]).per(100)
         end
+        @books_grid.order = :finished
+        @books_grid.descending = true
     end    
 
     def show
