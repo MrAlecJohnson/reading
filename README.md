@@ -2,6 +2,7 @@
 ## PLAN
 
 * more dashboard data: top authors and books by year published
+* Fix the filters so they're interactive
 * Add tags
 * Add comments
 * Typeaheads on authors?
