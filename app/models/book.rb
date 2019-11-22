@@ -3,6 +3,7 @@ require 'activerecord-import/base'
 require 'activerecord-import/active_record/adapters/postgresql_adapter'
 
 class Book < ApplicationRecord
+
     validates :title, presence: true
     validates :firstname, presence: true
     validates :lastname, presence: true

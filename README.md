@@ -1,6 +1,8 @@
 # README
 ## PLAN
 
+* check I'm using button_to for the download link
+
 * more dashboard data: top authors and books by year published
 * Add tags
 * Add comments
