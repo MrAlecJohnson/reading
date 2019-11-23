@@ -5,12 +5,9 @@ class BooksController < ApplicationController
     http_basic_authenticate_with name: USER, password: PASS, except: [:index]
 
     def index
-        @books_grid = BooksGrid.new(params[:books_grid]) do |scope|
-            scope.page(params[:page]).per(100)
-        end
+        @books = Book.all.order(finished: :desc)
         #binding.pry
-        #@books_grid.order = :finished
-        #@books_grid.descending = true
+        
     end    
 
     def show
@@ -79,8 +76,4 @@ class BooksController < ApplicationController
             :owned)
     end
 
-    protected
-    def grid_params
-        params.fetch(:tables_grid, {}).permit!
-    end
 end

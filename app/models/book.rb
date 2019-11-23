@@ -17,6 +17,17 @@ class Book < ApplicationRecord
         in: 1..5,
         message: '- this must be from 1 to 5'}
 
+    def owned_yn
+        :owned ? 'Yes' : 'No'
+    end
+
+    def gender_full
+        [
+            ['Male', 'M'], 
+            ['Female', 'F']
+        ]
+    end
+
     def self.my_import(file)
         new_books = []
         converter = lambda { |header| header.downcase }
