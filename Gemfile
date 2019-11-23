@@ -30,8 +30,6 @@ gem 'activerecord-import'
 # Use chartkick for pretty graphs
 gem 'chartkick'
 gem 'groupdate'
-# Use datagrid for tables
-gem 'datagrid'
 gem 'pry'
 
 # Use Active Storage variant
