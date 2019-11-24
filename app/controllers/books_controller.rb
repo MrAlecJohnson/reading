@@ -1,13 +1,11 @@
 class BooksController < ApplicationController
-
     USER = ENV['CONTROLLER_USER']
-    PASS = ENV['CONTROLLER_PASSWORD']
-    http_basic_authenticate_with name: USER, password: PASS, except: [:index]
+    PASS = ENV['CONTROLLER_PASSWORD']    
+
+    before_action :authenticate, except: [:index]
 
     def index
         @books = Book.all.order(finished: :desc)
-        #binding.pry
-        
     end    
 
     def show
@@ -75,5 +73,12 @@ class BooksController < ApplicationController
             :series,
             :owned)
     end
+
+    def authenticate
+        unless request.env['HTTP_HOST'] == 'localhost:3000'
+            http_basic_authenticate_with name: USER, password: PASS, except: [:index]
+        end
+    end
+
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_204832) do
+ActiveRecord::Schema.define(version: 2019_11_24_153218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,16 +18,15 @@ ActiveRecord::Schema.define(version: 2019_11_10_204832) do
   create_table "authors", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
-    t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "gender"
   end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "firstname"
     t.string "lastname"
-    t.string "gender"
     t.integer "published"
     t.date "finished"
     t.integer "rating"
@@ -36,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_204832) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "series"
+    t.integer "gender"
   end
 
   create_table "taggings", force: :cascade do |t|

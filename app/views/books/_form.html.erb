@@ -35,7 +35,7 @@
 
     <p>
         <%= form.label :gender, "Author's gender" %><br>
-        <%= form.select :gender, [['Female','F'], ['Male','M'], ['Other','O']] %>        
+        <%= form.select :gender, Book.genders.keys, {} %>
     </p>
 
     <p>

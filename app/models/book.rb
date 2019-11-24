@@ -8,8 +8,7 @@ class Book < ApplicationRecord
     validates :firstname, presence: true
     validates :lastname, presence: true
     validates :gender, inclusion: { 
-        in: ['M', 'F', 'O'], 
-        message: '- this must be M, F or O'}
+        in: 0..2}
     validates :published, length: {
         is: 4, 
         message: '- this must be a 4-digit year'}
@@ -17,15 +16,10 @@ class Book < ApplicationRecord
         in: 1..5,
         message: '- this must be from 1 to 5'}
 
+    enum gender: [:Female, :Male, :Other]
+   
     def owned_yn
         :owned ? 'Yes' : 'No'
-    end
-
-    def gender_full
-        [
-            ['Male', 'M'], 
-            ['Female', 'F']
-        ]
     end
 
     def self.my_import(file)

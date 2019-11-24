@@ -6,7 +6,7 @@ class HomeController < ApplicationController
         @this_year_count = @this_year.count
         
         if @this_year_count > 0
-            @women_this_year = (100*@this_year.where(gender: "F").count/@this_year_count).round
+            @women_this_year = (100*@this_year.where(gender: 0).count/@this_year_count).round
         else
             @women_this_year = 0
         end
