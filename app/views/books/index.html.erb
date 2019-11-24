@@ -4,16 +4,19 @@
     <div class = "notice"><%= flash[:notice] %></div>
 <% end %>
 
+<%= link_to 'Back to dashboard', "/" %><p>
+<%= link_to 'Add a new book', new_book_path %><p> 
+
 <table>
     <tr>
-        <th>Title</th>
-        <th>Author</th>
-        <th>Author's gender</th>
-        <th>Rating</th>
-        <th>Year published</th>
-        <th>Date finished</th>
-        <th>Series</th>
-        <th>Owned?</th>
+        <th><%= sortable("title") %></th>
+        <th><%= sortable("lastname", "Author") %></th>
+        <th><%= sortable("gender", "Author's gender") %></th>
+        <th><%= sortable("rating") %></th>
+        <th><%= sortable("published", "Year published") %></th>
+        <th><%= sortable("finished", "Date finished") %></th>
+        <th><%= sortable("series") %></th>
+        <th><%= sortable("owned") %></th>
         <th colspan = "2"></th>
     </tr>
 
@@ -35,7 +38,3 @@
     <% end %>
 
 </table>
-
-<%= link_to 'Back to dashboard', "/" %><p>
-<%= link_to 'Add a new book', new_book_path %><p> 
-

@@ -4,9 +4,10 @@ class BooksController < ApplicationController
 
     before_action :authenticate, except: [:index]
 
+    helper_method :sort_column, :sort_direction
     def index
-        @books = Book.all.order(finished: :desc)
-    end    
+        @books = Book.all.order(sort_column + ' ' + sort_direction)
+    end
 
     def show
         @book = Book.find(params[:id])
@@ -73,6 +74,14 @@ class BooksController < ApplicationController
             :series,
             :owned)
     end
+
+    def sort_column
+        Book.column_names.include?(params[:sort]) ? params[:sort] : "finished"
+    end
+      
+    def sort_direction
+        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end    
 
     def authenticate
         unless request.env['HTTP_HOST'] == 'localhost:3000'
