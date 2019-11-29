@@ -7,7 +7,9 @@ class BooksController < ApplicationController
     helper_method :sort_column, :sort_direction, :null_order
 
     def index
-        @books = Book.all.order("(#{sort_column}) #{sort_direction} #{null_order}")
+        unlowered = "#{sort_column} #{sort_direction} #{null_order}"
+        lowered = "lower(#{sort_column}) #{sort_direction} #{null_order}"
+        @books = Book.all.order(['title', 'lastname', 'series'].include?(sort_column) ? lowered : unlowered)
     end
 
     def show

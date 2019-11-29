@@ -1,8 +1,9 @@
 # README
 ## PLAN
 
-* going to replace the datagrid gem with manual code for learning and control
-* check I'm using button_to for the download link
+
+* how to get lower() sorting on the string columns but not the others? 
+* export/download (using button_to)
 * more dashboard data: top authors and books by year published
 * Add tags
 * Add comments
