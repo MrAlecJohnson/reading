@@ -3,10 +3,11 @@ class BooksController < ApplicationController
     PASS = ENV['CONTROLLER_PASSWORD']    
 
     before_action :authenticate, except: [:index]
+    
+    helper_method :sort_column, :sort_direction, :null_order
 
-    helper_method :sort_column, :sort_direction
     def index
-        @books = Book.all.order(sort_column + ' ' + sort_direction)
+        @books = Book.all.order("(#{sort_column}) #{sort_direction} #{null_order}")
     end
 
     def show
@@ -80,8 +81,12 @@ class BooksController < ApplicationController
     end
       
     def sort_direction
-        %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-    end    
+        ['asc', 'desc'].include?(params[:direction]) ? params[:direction] : "desc"
+    end
+    
+    def null_order
+        ['nulls first', 'nulls last'].include?(params[:null_order]) ? params[:null_order] : "nulls last"
+    end
 
     def authenticate
         unless request.env['HTTP_HOST'] == 'localhost:3000'
