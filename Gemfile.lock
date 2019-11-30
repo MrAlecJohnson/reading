@@ -78,8 +78,6 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
     crass (1.0.5)
-    datagrid (1.5.9)
-      rails (>= 4.0)
     erubi (1.9.0)
     ffi (1.11.1)
     globalid (0.4.2)
@@ -122,6 +120,7 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.5)
       mini_portile2 (~> 2.4.0)
+    pagy (3.7.0)
     pg (1.1.4)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -228,11 +227,11 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chartkick
-  datagrid
   groupdate
   jbuilder (~> 2.7)
   kaminari
   listen (>= 3.0.5, < 3.2)
+  pagy
   pg
   pry
   puma (~> 3.11)

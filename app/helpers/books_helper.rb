@@ -1,4 +1,6 @@
 module BooksHelper
+    include Pagy::Frontend
+    
     def sortable(column, title = nil)
         title ||= column.titleize
         # the lines below flip it if you click on the col you're already sorting by

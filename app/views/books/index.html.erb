@@ -7,6 +7,12 @@
 <%= link_to 'Back to dashboard', "/" %><p>
 <%= link_to 'Add a new book', new_book_path %><p> 
 
+<%= pagy_nav(@pagy).html_safe %>
+
+<p>Showing books up to:</p>
+
+<%= date_select(:date_end, order: [:year, :month, :day], prompt: 'End date') %>
+
 <table>
     <tr>
         <th><%= sortable("title") %></th>
@@ -38,3 +44,5 @@
     <% end %>
 
 </table>
+
+<%= pagy_nav(@pagy).html_safe %>

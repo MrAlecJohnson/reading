@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+    include Pagy::Backend
+
     USER = ENV['CONTROLLER_USER']
     PASS = ENV['CONTROLLER_PASSWORD']    
 
@@ -9,7 +11,10 @@ class BooksController < ApplicationController
     def index
         unlowered = "#{sort_column} #{sort_direction} #{null_order}"
         lowered = "lower(#{sort_column}) #{sort_direction} #{null_order}"
-        @books = Book.all.order(['title', 'lastname', 'series'].include?(sort_column) ? lowered : unlowered)
+        @date_start ||= Date.new(Date.current.year,1,1)
+        @date_finish = Date.new(params['date_end'].to_i)
+        #test = Date.new(params['date_end'].to_i)
+        @pagy, @books = pagy(Book.where(finished: @date_start..@date_end).order(['title', 'lastname', 'series'].include?(sort_column) ? lowered : unlowered), items: 50)
     end
 
     def show
